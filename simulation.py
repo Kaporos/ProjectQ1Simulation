@@ -1,8 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-
-
 class Simulation:
     def __init__(self, k, e, m):
         """
@@ -25,12 +23,12 @@ class Simulation:
         axes[0][0].plot(t,  np.sin(t), color="red")
 
         axes[0][1].set_title("Accélération")
-        axes[0][1].plot(t,  np.cos(t))
+        axes[0][1].plot(t,  np.cos(t), color="green")
 
         
         axes[1][0].set_title("Expo")
-        axes[1][0].plot(t,  np.exp(t))
+        axes[1][0].plot(t,  np.exp(t), color="blue")
 
         axes[1][1].set_title("Log")
-        axes[1][1].plot(t,  np.log(t))
+        axes[1][1].plot(t,  np.log(t), color="brown")
         self.__figures.append(fig) 

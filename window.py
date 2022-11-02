@@ -1,9 +1,7 @@
 import tkinter
 
 from matplotlib.backends.backend_tkagg import (
-    FigureCanvasTkAgg, NavigationToolbar2Tk)
-# Implement the default Matplotlib key bindings.
-from matplotlib.backend_bases import key_press_handler
+    FigureCanvasTkAgg)
 
 class Window:
     def __init__(self):
