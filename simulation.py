@@ -2,15 +2,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 
-def limite(l1,l2):
-    limite= abs(l1[2]-l2[0])/abs(l1[0]-l2[0])
-    return limite
-def derivee(data):
-    data_derivee = []
-    for i in range(len(data)-1):
-        data_derivee.append(limite(data[i],data[i+1]))
-    data_derivee.append(limite(data[len(data)-2], data[len(data)-1]))
-    return data_derivee
 
 class Simulation:
     def __init__(self):
@@ -49,9 +40,7 @@ class Simulation:
         speed = speed[:last_speed]
         start_speed = start_speed[:last_speed]
         move_evolution = move_evolution[:last_speed]
-        comparison_acc = []
-        if len(comparison_data) > 0:
-            comparison_acc = derivee(comparison_data)
+
         comparison_time = [x[0] for x in comparison_data]
         comparison_move = [x[1] for x in comparison_data]
         comparison_speed = [x[2] for x in comparison_data]
@@ -103,9 +92,6 @@ class Simulation:
         ax.set_xlabel("Time [s]")
         ax.set_ylabel("Acceleration [m/s^2]")
         ax.plot(t, acc, color="brown", label="Acceleration")
-        if len(comparison_acc) > 0:
-            print(comparison_acc)
-            ax.plot(comparison_time, comparison_acc, label="Mesure's Acceleration")
         ax.legend()
 
 
