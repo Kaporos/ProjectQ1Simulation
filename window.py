@@ -16,7 +16,7 @@ class Window:
         filename = fd.askopenfilename()
         self.comparaison_data = []
         with open(filename) as f:
-            lines = [x.split(" ") for x in f.readlines()]
+            lines = [x.replace("\t"," ").split(" ") for x in f.readlines()]
             for i in lines:
                 if len(i) != 3:
                     continue
